@@ -1,0 +1,153 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Video Intelligence API
+  description: >-
+    Makes videos searchable and discoverable by extracting metadata and
+    annotations using machine learning.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/video-intelligence
+servers:
+  - url: https://videointelligence.googleapis.com/v1
+paths:
+  /videos:annotate:
+    post:
+      operationId: annotateVideo
+      summary: Annotate video
+      description: >-
+        Performs asynchronous video annotation on a video stored in Google Cloud
+        Storage or provided as inline content.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnotateVideoRequest'
+      responses:
+        '200':
+          description: Long-running operation for video annotation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /operations/{operationId}:
+    get:
+      operationId: getOperation
+      summary: Get operation status
+      description: Gets the latest state of a long-running operation.
+      parameters:
+        - name: operationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Operation status and results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+    delete:
+      operationId: deleteOperation
+      summary: Delete operation
+      description: Deletes a long-running operation.
+      parameters:
+        - name: operationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful deletion.
+components:
+  schemas:
+    AnnotateVideoRequest:
+      type: object
+      required:
+        - features
+      properties:
+        inputUri:
+          type: string
+          description: Google Cloud Storage URI of the video.
+        inputContent:
+          type: string
+          description: Base64-encoded video content.
+        features:
+          type: array
+          items:
+            type: string
+            enum:
+              - FEATURE_UNSPECIFIED
+              - LABEL_DETECTION
+              - SHOT_CHANGE_DETECTION
+              - EXPLICIT_CONTENT_DETECTION
+              - SPEECH_TRANSCRIPTION
+              - TEXT_DETECTION
+              - OBJECT_TRACKING
+              - LOGO_RECOGNITION
+              - PERSON_DETECTION
+        videoContext:
+          $ref: '#/components/schemas/VideoContext'
+        outputUri:
+          type: string
+        locationId:
+          type: string
+    VideoContext:
+      type: object
+      properties:
+        segments:
+          type: array
+          items:
+            type: object
+            properties:
+              startTimeOffset:
+                type: string
+              endTimeOffset:
+                type: string
+        labelDetectionConfig:
+          type: object
+          properties:
+            labelDetectionMode:
+              type: string
+            stationaryCamera:
+              type: boolean
+            model:
+              type: string
+        shotChangeDetectionConfig:
+          type: object
+          properties:
+            model:
+              type: string
+        explicitContentDetectionConfig:
+          type: object
+          properties:
+            model:
+              type: string
+        textDetectionConfig:
+          type: object
+          properties:
+            languageHints:
+              type: array
+              items:
+                type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        metadata:
+          type: object
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object

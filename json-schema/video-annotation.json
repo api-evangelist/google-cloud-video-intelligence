@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-video-intelligence/refs/heads/main/json-schema/video-annotation.json",
+  "title": "Video Annotation Request",
+  "description": "Schema for a Google Cloud Video Intelligence annotation request.",
+  "type": "object",
+  "required": ["features"],
+  "properties": {
+    "inputUri": {
+      "type": "string",
+      "description": "Google Cloud Storage URI of the video to annotate."
+    },
+    "inputContent": {
+      "type": "string",
+      "description": "Base64-encoded video content for inline processing."
+    },
+    "features": {
+      "type": "array",
+      "description": "The video analysis features to enable.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "FEATURE_UNSPECIFIED",
+          "LABEL_DETECTION",
+          "SHOT_CHANGE_DETECTION",
+          "EXPLICIT_CONTENT_DETECTION",
+          "SPEECH_TRANSCRIPTION",
+          "TEXT_DETECTION",
+          "OBJECT_TRACKING",
+          "LOGO_RECOGNITION",
+          "PERSON_DETECTION"
+        ]
+      }
+    },
+    "videoContext": {
+      "type": "object",
+      "description": "Additional video context and configuration.",
+      "properties": {
+        "segments": {
+          "type": "array",
+          "description": "Video segments to annotate.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "startTimeOffset": {
+                "type": "string",
+                "description": "Start time offset in seconds."
+              },
+              "endTimeOffset": {
+                "type": "string",
+                "description": "End time offset in seconds."
+              }
+            }
+          }
+        },
+        "labelDetectionConfig": {
+          "type": "object",
+          "properties": {
+            "labelDetectionMode": {
+              "type": "string",
+              "enum": ["LABEL_DETECTION_MODE_UNSPECIFIED", "SHOT_MODE", "FRAME_MODE", "SHOT_AND_FRAME_MODE"]
+            },
+            "stationaryCamera": {
+              "type": "boolean"
+            },
+            "model": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "outputUri": {
+      "type": "string",
+      "description": "Google Cloud Storage URI for output results."
+    },
+    "locationId": {
+      "type": "string",
+      "description": "Cloud region where annotation should take place."
+    }
+  }
+}

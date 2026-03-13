@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcp": "https://cloud.google.com/video-intelligence#",
+    "VideoAnnotation": "gcp:VideoAnnotation",
+    "inputUri": "gcp:inputUri",
+    "features": "gcp:features",
+    "videoContext": "gcp:videoContext",
+    "labelDetection": "gcp:labelDetection",
+    "shotChangeDetection": "gcp:shotChangeDetection",
+    "explicitContentDetection": "gcp:explicitContentDetection",
+    "objectTracking": "gcp:objectTracking",
+    "textDetection": "gcp:textDetection",
+    "outputUri": "gcp:outputUri",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url"
+  }
+}
