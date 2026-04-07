@@ -31,6 +31,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+        - Videos:annotate
   /operations/{operationId}:
     get:
       operationId: getOperation
@@ -49,6 +51,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+        - Operations
     delete:
       operationId: deleteOperation
       summary: Google Cloud Video Intelligence Delete operation
@@ -62,6 +66,8 @@ paths:
       responses:
         '200':
           description: Successful deletion.
+      tags:
+        - Operations
 components:
   schemas:
     AnnotateVideoRequest:
@@ -151,3 +157,6 @@ components:
               type: string
         response:
           type: object
+tags:
+  - name: Operations
+  - name: Videos:annotate

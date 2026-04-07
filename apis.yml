@@ -13,12 +13,12 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Video Intelligence
-  - Video Analysis
-  - Object Detection
   - Content Moderation
   - Google Cloud
   - Machine Learning
+  - Object Detection
+  - Video Analysis
+  - Video Intelligence
 apis:
   - name: Google Cloud Video Intelligence API
     description: >-
@@ -28,9 +28,9 @@ apis:
     humanURL: https://cloud.google.com/video-intelligence
     baseURL: https://videointelligence.googleapis.com
     tags:
-      - Video Intelligence
-      - Video Analysis
       - Object Detection
+      - Video Analysis
+      - Video Intelligence
     properties:
       - type: Documentation
         url: https://cloud.google.com/video-intelligence/docs/reference/rest
