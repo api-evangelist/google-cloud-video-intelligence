@@ -1,0 +1,149 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Video Intelligence API
+  description: Makes videos searchable and discoverable by extracting metadata and annotations using machine learning.
+  tags:
+  - Google
+  - Cloud
+  - Video
+  - Intelligence
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-video-intelligence
+    baseUri: https://videointelligence.googleapis.com/v1
+    description: Google Cloud Video Intelligence API HTTP API.
+    resources:
+    - name: videos-annotate
+      path: /videos:annotate
+      operations:
+      - name: annotatevideo
+        method: POST
+        description: Google Cloud Video Intelligence Annotate video
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: operations-operationid
+      path: /operations/{operationId}
+      operations:
+      - name: getoperation
+        method: GET
+        description: Google Cloud Video Intelligence Get operation status
+        inputParameters:
+        - name: operationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteoperation
+        method: DELETE
+        description: Google Cloud Video Intelligence Delete operation
+        inputParameters:
+        - name: operationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-video-intelligence-rest
+    description: REST adapter for Google Cloud Video Intelligence API.
+    resources:
+    - path: /videos:annotate
+      name: annotatevideo
+      operations:
+      - method: POST
+        name: annotatevideo
+        description: Google Cloud Video Intelligence Annotate video
+        call: google-cloud-video-intelligence.annotatevideo
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /operations/{operationId}
+      name: getoperation
+      operations:
+      - method: GET
+        name: getoperation
+        description: Google Cloud Video Intelligence Get operation status
+        call: google-cloud-video-intelligence.getoperation
+        with:
+          operationId: rest.operationId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /operations/{operationId}
+      name: deleteoperation
+      operations:
+      - method: DELETE
+        name: deleteoperation
+        description: Google Cloud Video Intelligence Delete operation
+        call: google-cloud-video-intelligence.deleteoperation
+        with:
+          operationId: rest.operationId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-video-intelligence-mcp
+    transport: http
+    description: MCP adapter for Google Cloud Video Intelligence API for AI agent use.
+    tools:
+    - name: annotatevideo
+      description: Google Cloud Video Intelligence Annotate video
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-video-intelligence.annotatevideo
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getoperation
+      description: Google Cloud Video Intelligence Get operation status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-video-intelligence.getoperation
+      with:
+        operationId: tools.operationId
+      inputParameters:
+      - name: operationId
+        type: string
+        description: operationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteoperation
+      description: Google Cloud Video Intelligence Delete operation
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-video-intelligence.deleteoperation
+      with:
+        operationId: tools.operationId
+      inputParameters:
+      - name: operationId
+        type: string
+        description: operationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
