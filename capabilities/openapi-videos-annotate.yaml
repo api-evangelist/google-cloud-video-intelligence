@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Video Intelligence API — Videos:annotate
+  description: 'Google Cloud Video Intelligence API — Videos:annotate. 1 operations. Lead operation: Google Cloud Video Intelligence
+    Annotate video. Self-contained Naftiko capability covering one Google Cloud Video Intelligence business surface.'
+  tags:
+  - Google Cloud Video Intelligence
+  - Videos:annotate
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_VIDEO_INTELLIGENCE_API_KEY: GOOGLE_CLOUD_VIDEO_INTELLIGENCE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-videos-annotate
+    baseUri: https://videointelligence.googleapis.com/v1
+    description: Google Cloud Video Intelligence API — Videos:annotate business capability. Self-contained, no shared references.
+    resources:
+    - name: videos:annotate
+      path: /videos:annotate
+      operations:
+      - name: annotatevideo
+        method: POST
+        description: Google Cloud Video Intelligence Annotate video
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: openapi-videos-annotate-rest
+    port: 8080
+    description: REST adapter for Google Cloud Video Intelligence API — Videos:annotate. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/videos-annotate
+      name: videos-annotate
+      description: REST surface for videos:annotate.
+      operations:
+      - method: POST
+        name: annotatevideo
+        description: Google Cloud Video Intelligence Annotate video
+        call: openapi-videos-annotate.annotatevideo
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-videos-annotate-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Video Intelligence API — Videos:annotate. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-cloud-video-intelligence-annotate
+      description: Google Cloud Video Intelligence Annotate video
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-videos-annotate.annotatevideo
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
