@@ -1,0 +1,77 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Video Intelligence API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Videos:annotate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Video Intelligence Annotate video",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://videointelligence.googleapis.com/v1/videos:annotate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Performs asynchronous video annotation on a video stored in Google Cloud Storage or provided as inline content."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Operations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Video Intelligence Get operation status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://videointelligence.googleapis.com/v1/operations/:operationId",
+            "params": [
+              {
+                "name": "operationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the latest state of a long-running operation."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Video Intelligence Delete operation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://videointelligence.googleapis.com/v1/operations/:operationId",
+            "params": [
+              {
+                "name": "operationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a long-running operation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

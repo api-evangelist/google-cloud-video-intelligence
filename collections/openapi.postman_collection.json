@@ -1,0 +1,298 @@
+{
+  "item": [
+    {
+      "id": "6206a057-122e-48ec-a712-3f3072a0698b",
+      "name": "Operations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "39d24491-8581-4da4-abac-b727b7fecd36",
+          "name": "Google Cloud Video Intelligence Get operation status",
+          "request": {
+            "name": "Google Cloud Video Intelligence Get operation status",
+            "description": {
+              "content": "Gets the latest state of a long-running operation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "operations",
+                ":operationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "operationId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57d5c884-e51d-44cd-b227-1e8a9a169196",
+              "name": "Operation status and results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "operations",
+                    ":operationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "operationId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"metadata\": {},\n  \"done\": false,\n  \"error\": {\n    \"code\": 2001,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "122928f9-7a76-4932-8968-7e0ef232a6c2",
+          "name": "Google Cloud Video Intelligence Delete operation",
+          "request": {
+            "name": "Google Cloud Video Intelligence Delete operation",
+            "description": {
+              "content": "Deletes a long-running operation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "operations",
+                ":operationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "operationId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "16e49209-7f65-4b63-991f-7654c941bb58",
+              "name": "Successful deletion.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "operations",
+                    ":operationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "operationId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "14af4712-6888-4ee0-bab7-80cd92e40bd5",
+      "name": "Videos:annotate",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4e97baa0-837f-411c-be0c-853d24eec8ca",
+          "name": "Google Cloud Video Intelligence Annotate video",
+          "request": {
+            "name": "Google Cloud Video Intelligence Annotate video",
+            "description": {
+              "content": "Performs asynchronous video annotation on a video stored in Google Cloud Storage or provided as inline content.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "videos:annotate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"features\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"inputUri\": \"<string>\",\n  \"inputContent\": \"<string>\",\n  \"videoContext\": {\n    \"segments\": [\n      {\n        \"startTimeOffset\": \"<string>\",\n        \"endTimeOffset\": \"<string>\"\n      },\n      {\n        \"startTimeOffset\": \"<string>\",\n        \"endTimeOffset\": \"<string>\"\n      }\n    ],\n    \"labelDetectionConfig\": {\n      \"labelDetectionMode\": \"<string>\",\n      \"stationaryCamera\": \"<boolean>\",\n      \"model\": \"<string>\"\n    },\n    \"shotChangeDetectionConfig\": {\n      \"model\": \"<string>\"\n    },\n    \"explicitContentDetectionConfig\": {\n      \"model\": \"<string>\"\n    },\n    \"textDetectionConfig\": {\n      \"languageHints\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"outputUri\": \"<string>\",\n  \"locationId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e0a3ef74-e5ad-45aa-a57e-928b12d9d094",
+              "name": "Long-running operation for video annotation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "videos:annotate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"features\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"inputUri\": \"<string>\",\n  \"inputContent\": \"<string>\",\n  \"videoContext\": {\n    \"segments\": [\n      {\n        \"startTimeOffset\": \"string\",\n        \"endTimeOffset\": \"string\"\n      },\n      {\n        \"startTimeOffset\": \"string\",\n        \"endTimeOffset\": \"string\"\n      }\n    ],\n    \"labelDetectionConfig\": {\n      \"labelDetectionMode\": \"string\",\n      \"stationaryCamera\": false,\n      \"model\": \"string\"\n    },\n    \"shotChangeDetectionConfig\": {\n      \"model\": \"string\"\n    },\n    \"explicitContentDetectionConfig\": {\n      \"model\": \"string\"\n    },\n    \"textDetectionConfig\": {\n      \"languageHints\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  },\n  \"outputUri\": \"<string>\",\n  \"locationId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"metadata\": {},\n  \"done\": false,\n  \"error\": {\n    \"code\": 2001,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://videointelligence.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "65d10503-c386-4cca-a812-5f38951fd779",
+    "name": "Google Cloud Video Intelligence API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Makes videos searchable and discoverable by extracting metadata and annotations using machine learning.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
