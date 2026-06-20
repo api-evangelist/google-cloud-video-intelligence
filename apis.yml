@@ -4,7 +4,7 @@ description: >-
   Google Cloud Video Intelligence API makes videos searchable and discoverable by extracting metadata with an
   easy-to-use REST API. It enables annotation of videos stored in Google Cloud Storage with video-level, shot-level, and
   frame-level labels, object tracking, text detection, and explicit content detection.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-video-intelligence/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
