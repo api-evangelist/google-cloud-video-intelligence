@@ -42,6 +42,10 @@ apis:
       - type: JSONLD
         url: json-ld/context.jsonld
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-video-intelligence-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-video-intelligence-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/googleapis
   - type: Portal
@@ -66,6 +70,8 @@ common:
     url: json-ld/context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
+  - url: https://docs.cloud.google.com/feeds/video-intelligence-api-release-notes.xml
+    type: Blog
 integrations:
   - name: Become a Partner
 maintainers:
