@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Video Intelligence Operations API
+  description: Makes videos searchable and discoverable by extracting metadata and annotations using machine learning.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/video-intelligence
+servers:
+- url: https://videointelligence.googleapis.com/v1
+tags:
+- name: Operations
+paths:
+  /operations/{operationId}:
+    get:
+      operationId: getOperation
+      summary: Google Cloud Video Intelligence Get operation status
+      description: Gets the latest state of a long-running operation.
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Operation status and results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+      tags:
+      - Operations
+    delete:
+      operationId: deleteOperation
+      summary: Google Cloud Video Intelligence Delete operation
+      description: Deletes a long-running operation.
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful deletion.
+      tags:
+      - Operations
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        metadata:
+          type: object
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object

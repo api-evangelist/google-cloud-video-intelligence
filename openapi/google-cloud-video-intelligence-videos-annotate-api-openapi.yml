@@ -1,23 +1,21 @@
 openapi: 3.1.0
 info:
-  title: Google Cloud Video Intelligence API
-  description: >-
-    Makes videos searchable and discoverable by extracting metadata and
-    annotations using machine learning.
+  title: Google Cloud Video Intelligence Operations Videos:annotate API
+  description: Makes videos searchable and discoverable by extracting metadata and annotations using machine learning.
   version: v1
   contact:
     name: Google Cloud
     url: https://cloud.google.com/video-intelligence
 servers:
-  - url: https://videointelligence.googleapis.com/v1
+- url: https://videointelligence.googleapis.com/v1
+tags:
+- name: Videos:annotate
 paths:
   /videos:annotate:
     post:
       operationId: annotateVideo
       summary: Google Cloud Video Intelligence Annotate video
-      description: >-
-        Performs asynchronous video annotation on a video stored in Google Cloud
-        Storage or provided as inline content.
+      description: Performs asynchronous video annotation on a video stored in Google Cloud Storage or provided as inline content.
       requestBody:
         required: true
         content:
@@ -32,48 +30,31 @@ paths:
               schema:
                 $ref: '#/components/schemas/Operation'
       tags:
-        - Videos:annotate
-  /operations/{operationId}:
-    get:
-      operationId: getOperation
-      summary: Google Cloud Video Intelligence Get operation status
-      description: Gets the latest state of a long-running operation.
-      parameters:
-        - name: operationId
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Operation status and results.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Operation'
-      tags:
-        - Operations
-    delete:
-      operationId: deleteOperation
-      summary: Google Cloud Video Intelligence Delete operation
-      description: Deletes a long-running operation.
-      parameters:
-        - name: operationId
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successful deletion.
-      tags:
-        - Operations
+      - Videos:annotate
 components:
   schemas:
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        metadata:
+          type: object
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
     AnnotateVideoRequest:
       type: object
       required:
-        - features
+      - features
       properties:
         inputUri:
           type: string
@@ -86,15 +67,15 @@ components:
           items:
             type: string
             enum:
-              - FEATURE_UNSPECIFIED
-              - LABEL_DETECTION
-              - SHOT_CHANGE_DETECTION
-              - EXPLICIT_CONTENT_DETECTION
-              - SPEECH_TRANSCRIPTION
-              - TEXT_DETECTION
-              - OBJECT_TRACKING
-              - LOGO_RECOGNITION
-              - PERSON_DETECTION
+            - FEATURE_UNSPECIFIED
+            - LABEL_DETECTION
+            - SHOT_CHANGE_DETECTION
+            - EXPLICIT_CONTENT_DETECTION
+            - SPEECH_TRANSCRIPTION
+            - TEXT_DETECTION
+            - OBJECT_TRACKING
+            - LOGO_RECOGNITION
+            - PERSON_DETECTION
         videoContext:
           $ref: '#/components/schemas/VideoContext'
         outputUri:
@@ -139,24 +120,3 @@ components:
               type: array
               items:
                 type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        metadata:
-          type: object
-        done:
-          type: boolean
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-        response:
-          type: object
-tags:
-  - name: Operations
-  - name: Videos:annotate
