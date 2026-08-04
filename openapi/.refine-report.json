@@ -1,0 +1,16 @@
+{
+  "provider": "google-cloud-video-intelligence",
+  "sources": [
+    "google-cloud-video-intelligence-operations-api-openapi.yml",
+    "google-cloud-video-intelligence-videos-annotate-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-video-intelligence-operations-api-openapi.yml",
+    "google-cloud-video-intelligence-videos-annotate-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

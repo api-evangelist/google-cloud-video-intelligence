@@ -1,0 +1,125 @@
+{
+  "info": {
+    "_postman_id": "29b19841-ddf7-480f-b127-db37cd302df8",
+    "name": "Google Cloud Video Intelligence Operations Videos:annotate API",
+    "description": "Makes videos searchable and discoverable by extracting metadata and annotations using machine learning.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:53.000Z",
+    "updatedAt": "2026-07-28T01:48:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-29b19841-ddf7-480f-b127-db37cd302df8"
+  },
+  "item": [
+    {
+      "name": "videos:annotate",
+      "item": [
+        {
+          "name": "Google Cloud Video Intelligence Annotate video",
+          "id": "361c04d8-71e0-49fd-979b-4ba26913ab2e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"features\": [\n    \"FEATURE_UNSPECIFIED\",\n    \"OBJECT_TRACKING\"\n  ],\n  \"inputUri\": \"<string>\",\n  \"inputContent\": \"<string>\",\n  \"videoContext\": {\n    \"segments\": [\n      {\n        \"startTimeOffset\": \"<string>\",\n        \"endTimeOffset\": \"<string>\"\n      },\n      {\n        \"startTimeOffset\": \"<string>\",\n        \"endTimeOffset\": \"<string>\"\n      }\n    ],\n    \"labelDetectionConfig\": {\n      \"labelDetectionMode\": \"<string>\",\n      \"stationaryCamera\": \"<boolean>\",\n      \"model\": \"<string>\"\n    },\n    \"shotChangeDetectionConfig\": {\n      \"model\": \"<string>\"\n    },\n    \"explicitContentDetectionConfig\": {\n      \"model\": \"<string>\"\n    },\n    \"textDetectionConfig\": {\n      \"languageHints\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"outputUri\": \"<string>\",\n  \"locationId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/videos:annotate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "videos:annotate"
+              ]
+            },
+            "description": "Performs asynchronous video annotation on a video stored in Google Cloud Storage or provided as inline content."
+          },
+          "response": [
+            {
+              "id": "b8ae2dc7-d144-450b-aa99-4954702eae74",
+              "name": "Long-running operation for video annotation.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"features\": [\n    \"FEATURE_UNSPECIFIED\",\n    \"OBJECT_TRACKING\"\n  ],\n  \"inputUri\": \"<string>\",\n  \"inputContent\": \"<string>\",\n  \"videoContext\": {\n    \"segments\": [\n      {\n        \"startTimeOffset\": \"<string>\",\n        \"endTimeOffset\": \"<string>\"\n      },\n      {\n        \"startTimeOffset\": \"<string>\",\n        \"endTimeOffset\": \"<string>\"\n      }\n    ],\n    \"labelDetectionConfig\": {\n      \"labelDetectionMode\": \"<string>\",\n      \"stationaryCamera\": \"<boolean>\",\n      \"model\": \"<string>\"\n    },\n    \"shotChangeDetectionConfig\": {\n      \"model\": \"<string>\"\n    },\n    \"explicitContentDetectionConfig\": {\n      \"model\": \"<string>\"\n    },\n    \"textDetectionConfig\": {\n      \"languageHints\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"outputUri\": \"<string>\",\n  \"locationId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/videos:annotate",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "videos:annotate"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"name\": \"<string>\",\n  \"metadata\": {},\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+              "createdAt": "2026-07-28T01:48:54.000Z",
+              "updatedAt": "2026-07-28T01:48:54.000Z",
+              "uid": "35240-b8ae2dc7-d144-450b-aa99-4954702eae74"
+            }
+          ],
+          "createdAt": "2026-07-28T01:48:54.000Z",
+          "updatedAt": "2026-07-28T01:48:54.000Z",
+          "uid": "35240-361c04d8-71e0-49fd-979b-4ba26913ab2e"
+        }
+      ],
+      "id": "944ce834-d26e-403c-9a9a-d39ac607d48a",
+      "createdAt": "2026-07-28T01:48:54.000Z",
+      "updatedAt": "2026-07-28T01:48:54.000Z",
+      "uid": "35240-944ce834-d26e-403c-9a9a-d39ac607d48a"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://videointelligence.googleapis.com/v1"
+    }
+  ]
+}
