@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Video Intelligence Operations API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Operations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Video Intelligence Get operation status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://videointelligence.googleapis.com/v1/operations/:operationId",
+            "params": [
+              {
+                "name": "operationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the latest state of a long-running operation."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Video Intelligence Delete operation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://videointelligence.googleapis.com/v1/operations/:operationId",
+            "params": [
+              {
+                "name": "operationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a long-running operation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
