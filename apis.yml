@@ -25,6 +25,13 @@ type: Index
 tags:
   - Content Moderation
   - Google Cloud
+  - Machine-Learning
+  - Object Detection
+  - Video Analysis
+  - Video Intelligence
+tags_raw:
+  - Content Moderation
+  - Google Cloud
   - Machine Learning
   - Object Detection
   - Video Analysis
@@ -35,7 +42,8 @@ apis:
   description: The Operations API from Google Cloud Video Intelligence — 1 operation(s) for operations.
   humanURL: https://cloud.google.com/video-intelligence
   baseURL: https://videointelligence.googleapis.com
-  tags:
+  tags: []
+  tags_raw:
   - Operations
   properties:
   - type: OpenAPI
