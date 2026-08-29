@@ -4,6 +4,18 @@ description: >-
   Google Cloud Video Intelligence API makes videos searchable and discoverable by extracting metadata with an
   easy-to-use REST API. It enables annotation of videos stored in Google Cloud Storage with video-level, shot-level, and
   frame-level labels, object tracking, text detection, and explicit content detection.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
