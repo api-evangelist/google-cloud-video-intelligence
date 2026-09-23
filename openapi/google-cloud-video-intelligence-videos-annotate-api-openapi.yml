@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Video Intelligence Operations Videos:annotate API
+  title: Google Cloud Video Intelligence Videos:annotate API
   description: Makes videos searchable and discoverable by extracting metadata and annotations using machine learning.
   version: v1
   contact:
@@ -33,24 +33,37 @@ paths:
       - Videos:annotate
 components:
   schemas:
-    Operation:
+    AnnotateVideoRequest:
       type: object
+      required:
+      - features
       properties:
-        name:
+        inputUri:
           type: string
-        metadata:
-          type: object
-        done:
-          type: boolean
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-        response:
-          type: object
+          description: Google Cloud Storage URI of the video.
+        inputContent:
+          type: string
+          description: Base64-encoded video content.
+        features:
+          type: array
+          items:
+            type: string
+            enum:
+            - FEATURE_UNSPECIFIED
+            - LABEL_DETECTION
+            - SHOT_CHANGE_DETECTION
+            - EXPLICIT_CONTENT_DETECTION
+            - SPEECH_TRANSCRIPTION
+            - TEXT_DETECTION
+            - OBJECT_TRACKING
+            - LOGO_RECOGNITION
+            - PERSON_DETECTION
+        videoContext:
+          $ref: '#/components/schemas/VideoContext'
+        outputUri:
+          type: string
+        locationId:
+          type: string
     VideoContext:
       type: object
       properties:
@@ -89,34 +102,21 @@ components:
               type: array
               items:
                 type: string
-    AnnotateVideoRequest:
+    Operation:
       type: object
-      required:
-      - features
       properties:
-        inputUri:
+        name:
           type: string
-          description: Google Cloud Storage URI of the video.
-        inputContent:
-          type: string
-          description: Base64-encoded video content.
-        features:
-          type: array
-          items:
-            type: string
-            enum:
-            - FEATURE_UNSPECIFIED
-            - LABEL_DETECTION
-            - SHOT_CHANGE_DETECTION
-            - EXPLICIT_CONTENT_DETECTION
-            - SPEECH_TRANSCRIPTION
-            - TEXT_DETECTION
-            - OBJECT_TRACKING
-            - LOGO_RECOGNITION
-            - PERSON_DETECTION
-        videoContext:
-          $ref: '#/components/schemas/VideoContext'
-        outputUri:
-          type: string
-        locationId:
-          type: string
+        metadata:
+          type: object
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
