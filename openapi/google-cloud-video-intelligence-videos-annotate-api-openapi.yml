@@ -33,37 +33,6 @@ paths:
       - Videos:annotate
 components:
   schemas:
-    AnnotateVideoRequest:
-      type: object
-      required:
-      - features
-      properties:
-        inputUri:
-          type: string
-          description: Google Cloud Storage URI of the video.
-        inputContent:
-          type: string
-          description: Base64-encoded video content.
-        features:
-          type: array
-          items:
-            type: string
-            enum:
-            - FEATURE_UNSPECIFIED
-            - LABEL_DETECTION
-            - SHOT_CHANGE_DETECTION
-            - EXPLICIT_CONTENT_DETECTION
-            - SPEECH_TRANSCRIPTION
-            - TEXT_DETECTION
-            - OBJECT_TRACKING
-            - LOGO_RECOGNITION
-            - PERSON_DETECTION
-        videoContext:
-          $ref: '#/components/schemas/VideoContext'
-        outputUri:
-          type: string
-        locationId:
-          type: string
     VideoContext:
       type: object
       properties:
@@ -120,3 +89,34 @@ components:
               type: string
         response:
           type: object
+    AnnotateVideoRequest:
+      type: object
+      required:
+      - features
+      properties:
+        inputUri:
+          type: string
+          description: Google Cloud Storage URI of the video.
+        inputContent:
+          type: string
+          description: Base64-encoded video content.
+        features:
+          type: array
+          items:
+            type: string
+            enum:
+            - FEATURE_UNSPECIFIED
+            - LABEL_DETECTION
+            - SHOT_CHANGE_DETECTION
+            - EXPLICIT_CONTENT_DETECTION
+            - SPEECH_TRANSCRIPTION
+            - TEXT_DETECTION
+            - OBJECT_TRACKING
+            - LOGO_RECOGNITION
+            - PERSON_DETECTION
+        videoContext:
+          $ref: '#/components/schemas/VideoContext'
+        outputUri:
+          type: string
+        locationId:
+          type: string

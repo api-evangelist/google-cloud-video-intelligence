@@ -37,7 +37,7 @@ type: Index
 tags:
   - Content Moderation
   - Google Cloud
-  - Machine-Learning
+  - Machine Learning
   - Object Detection
   - Video Analysis
   - Video Intelligence
@@ -48,6 +48,7 @@ tags_raw:
   - Object Detection
   - Video Analysis
   - Video Intelligence
+  - Machine-Learning
 apis:
 - aid: google-cloud-video-intelligence:google-cloud-video-intelligence-operations-api
   name: Google Cloud Video Intelligence Operations API
