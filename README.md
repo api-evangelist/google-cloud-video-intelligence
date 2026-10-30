@@ -1,4 +1,4 @@
-# Google Cloud Video Intelligence (google-cloud-video-intelligence)
+# Google Cloud Video Intelligence
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,68 +66,146 @@
 
 Google Cloud Video Intelligence API makes videos searchable and discoverable by extracting metadata with an easy-to-use REST API. It enables annotation of videos stored in Google Cloud Storage with video-level, shot-level, and frame-level labels, object tracking, text detection, and explicit content detection.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-video-intelligence/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-video-intelligence/refs/heads/main/apis.yml)
+**Areas:** Content Moderation · Google Cloud · Machine Learning · Object Detection · Video Analysis · Video Intelligence
 
-## Scope
+## Google Cloud Video Intelligence on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud Video Intelligence is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-video-intelligence/](https://apis.io/providers/google-cloud-video-intelligence/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Content Moderation
-- Google Cloud
-- Machine Learning
-- Object Detection
-- Video Analysis
-- Video Intelligence
+- [Google Cloud Video Intelligence Operations API](https://apis.io/apis/google-cloud-video-intelligence/google-cloud-video-intelligence-operations-api/) — The Operations API from Google Cloud Video Intelligence — 1 operation(s) for operations.
+- [Google Cloud Video Intelligence Videos:annotate API](https://apis.io/apis/google-cloud-video-intelligence/google-cloud-video-intelligence-videos-annotate-api/) — The Videos:annotate API from Google Cloud Video Intelligence — 1 operation(s) for videos:annotate.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Cloud Video Intelligence API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Annotates videos with labels, shot changes, object tracking, text detection, and explicit content detection using Google's machine learning models.
+- [Google Cloud Video Intelligence Agentic Access](https://apis.io/agentic-access/google-cloud-video-intelligence/google-cloud-video-intelligence-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/video-intelligence](https://cloud.google.com/video-intelligence)
-- **Base URL:** `https://videointelligence.googleapis.com`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Object Detection
-- Video Analysis
-- Video Intelligence
+- [Video Annotation Request](https://apis.io/schemas/google-cloud-video-intelligence/video-annotation/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/video-intelligence/docs/reference/rest)
-- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/docs/authentication)
-- [Getting Started](https://cloud.google.com/video-intelligence/docs/quickstarts)
-- [JSON Schema](json-schema/video-annotation.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [context Context](https://apis.io/jsonld/google-cloud-video-intelligence/context/)
 
-- [GitHub Organization](https://github.com/googleapis)
-- [Portal](https://cloud.google.com/video-intelligence)
-- [Getting Started](https://cloud.google.com/video-intelligence/docs/quickstarts)
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Video Intelligence Operations API](https://apis.io/collections/google-cloud-video-intelligence/open-google-cloud-video-intelligence-operations-api/)
+- [Google Cloud Video Intelligence Operations Videos:annotate API](https://apis.io/collections/google-cloud-video-intelligence/open-google-cloud-video-intelligence-videos-annotate-api/)
+- [Google Cloud Video Intelligence API](https://apis.io/collections/google-cloud-video-intelligence/open-openapi/)
+- [Google Cloud Video Intelligence Operations API](https://apis.io/collections/google-cloud-video-intelligence/postman-google-cloud-video-intelligence-operations-api/)
+- [Google Cloud Video Intelligence Operations Videos:annotate API](https://apis.io/collections/google-cloud-video-intelligence/postman-google-cloud-video-intelligence-videos-annotate-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Video Intelligence — jsonschema rules](https://apis.io/rules/google-cloud-video-intelligence/google-cloud-video-intelligence-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Video Intelligence Domain Security](https://apis.io/security/google-cloud-video-intelligence/google-cloud-video-intelligence-domain-security/)
+- [Google Cloud Video Intelligence Vulnerability Disclosure](https://apis.io/security/google-cloud-video-intelligence/google-cloud-video-intelligence-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Video Intelligence Plans Pricing](https://apis.io/plans/google-cloud-video-intelligence/google-cloud-video-intelligence-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Video Intelligence Rate Limits](https://apis.io/rate-limits/google-cloud-video-intelligence/google-cloud-video-intelligence-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Video Intelligence Finops](https://apis.io/finops/google-cloud-video-intelligence/google-cloud-video-intelligence-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/video-intelligence/docs)
-- [Authentication](https://cloud.google.com/docs/authentication)
+- [Getting started](https://cloud.google.com/video-intelligence/docs/quickstarts)
 - [Pricing](https://cloud.google.com/video-intelligence/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/video-intelligence/docs/support)
-- [JSON-LD](json-ld/context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Blog](https://docs.cloud.google.com/feeds/video-intelligence-api-release-notes.xml)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/googleapis)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 45.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 53.8 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 51.2 |
+| Access clarity | 39.5 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 28.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-video-intelligence/](https://apis.io/providers/google-cloud-video-intelligence/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Video Intelligence: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-video-intelligence/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
